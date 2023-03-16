@@ -457,7 +457,9 @@ enum ViewType
       {
         [progressIndicator setUsesThreadedAnimation:YES];
         [progressIndicator startAnimation:nil];
-        [stopButton setHidden:NO];
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [stopButton setHidden:NO];
+          });
       }
     }
     else if ([threadState isEqualToString:MVStatusTaskTerminated] == YES)
@@ -466,7 +468,9 @@ enum ViewType
       {
         [progressIndicator stopAnimation:nil]; 
         [statusText setStringValue:@""];
-        [stopButton setHidden:YES];
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [stopButton setHidden:YES];
+          });
       }
     }
   }

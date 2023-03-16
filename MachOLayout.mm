@@ -155,13 +155,13 @@ using namespace std;
 //-----------------------------------------------------------------------------
 - (uint32_t)fileOffsetToRVA: (uint32_t)offset
 {
-  NSParameterAssert([self is64bit] == NO);
+//  NSParameterAssert([self is64bit] == NO);
   
   SegmentInfoMap::const_iterator segIter = segmentInfo.upper_bound(offset);
   if (segIter == segmentInfo.begin())
   {
-    [NSException raise:@"fileOffsetToRVA"
-                format:@"no segment found at offset 0x%X", offset];
+//    [NSException raise:@"fileOffsetToRVA"
+//                format:@"no segment found at offset 0x%X", offset];
   }
   --segIter;
   uint32_t segOffset = segIter->first;

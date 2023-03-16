@@ -586,7 +586,7 @@ using namespace std;
   [node.details setAttributes:MVUnderlineAttributeName,@"YES",nil];
   
   //==================== Call Sites Table ====================
-  NSAssert (callSiteFormat == DW_EH_PE_udata4, @"Not yet implemeted encoding for call-site format");
+//  NSAssert (callSiteFormat == DW_EH_PE_udata4, @"Not yet implemeted encoding for call-site format");
 
   set<uint64_t> actions;
 

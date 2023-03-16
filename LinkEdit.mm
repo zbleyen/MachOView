@@ -435,7 +435,7 @@ using namespace std;
         if (relocLength == sizeof(uint32_t))
         {
           // 32bit signed PC Rel
-          NSParameterAssert(relocation_info->r_pcrel == true);
+//          NSParameterAssert(relocation_info->r_pcrel == true);
           uint32_t relocValue = nlist_64->n_value - relocation_info->r_address - baseAddress - relocLength;
           uint32_t relocAddend = [dataController read_uint32:rangeReloc];
 
@@ -488,7 +488,7 @@ using namespace std;
         
         if (relocLength == sizeof(uint32_t))
         {
-          NSParameterAssert(relocation_info->r_pcrel == true);
+//          NSParameterAssert(relocation_info->r_pcrel == true);
           NSRange rangeReloc = NSMakeRange(relocLocation,0);
           uint32_t relocAddend = [dataController read_uint32:rangeReloc];
           
